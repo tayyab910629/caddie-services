@@ -2,7 +2,7 @@ class BookingController < ApplicationController
     def index
       
         @test=params[:packege]
-        if params[:packege] == "traditional_caddie"
+        if params[:packege] == "traditional-caddie"
             @selcted_packege="You Selected Traditional Caddie"
             @price=210
         elsif params[:packege] == "fore_caddie"

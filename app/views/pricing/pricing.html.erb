@@ -11,75 +11,25 @@
                         <p class="text-center text-dark-blue fw-500">Select your preferred booking option below</p>
                     </div>
                     <div class="pricing-wrapper">
-                        <div class="plan-card">
-                            <div>
-                                <h3 class="plan-title text-center">Traditional Caddie</h3>
-                                <h4 class="plan-price text-center">$210</h4>
-                            </div>
-
-                            <div>
-                                <ul class="plan-benefits">
-                                    <li>Enjoy a round of golf with a professional caddie.</li>
-                                    <li>Caddies are experienced and knowledgeable.</li>
-                                    <li>Caddies carry the golfer's bag.</li>
-
-                                    <li> Caddies provide yardage information. </li>
-                                    <li>Caddies replace divots on the course.</li>
-                                    <li>Caddies rake bunkers. </li>
-                                    <li>Caddies assist with green reading and other tasks</li>
-                                </ul>
-                            </div>
-                            <div class="text-center">
-                               <%= link_to 'Book Now', "/booking?packege=traditional_caddie", class: "btn btn-dark-blue plan-btn" %>
-                            </div>
-                        </div>
-                        <div class="plan-card">
-                            <div>
-                                <h3 class="plan-title text-center">Fore Caddie</h3>
-                                <h4 class="plan-price text-center">$225</h4>
-                            </div>
-
-                            <div>
-                                <ul class="plan-benefits">
-                                    <li>Enjoy a round of golf with a professional caddie.</li>
-                                    <li>Caddies are experienced and knowledgeable.</li>
-                                    <li>Caddies carry the golfer's bag.</li>
-
-                                    <li> Caddies provide yardage information. </li>
-                                    <li>Caddies replace divots on the course.</li>
-                                    <li>Caddies rake bunkers. </li>
-                                    <li>Caddies assist with green reading and other tasks</li>
-                                </ul>
-                            </div>
-                            <div class="text-center">
-                                
-                                <%= link_to 'Book Now', "/booking?packege=fore_caddie", class: "btn btn-dark-blue plan-btn" %>
-
-
-                                
-                            </div>
-                        </div>
-                        <div class="plan-card">
-                            <div>
-                                <h3 class="plan-title text-center">Double Bagger</h3>
-                                <h4 class="plan-price text-center">$325</h4>
-                            </div>
-
-                            <div>
-                                <ul class="plan-benefits">
-                                    <li>Enjoy a round of golf with a professional caddie.</li>
-                                    <li>Caddies are experienced and knowledgeable.</li>
-                                    <li>Caddies carry the golfer's bag.</li>
-
-                                    <li> Caddies provide yardage information. </li>
-                                    <li>Caddies replace divots on the course.</li>
-                                    <li>Caddies rake bunkers. </li>
-                                    <li>Caddies assist with green reading and other tasks</li>
-                                </ul>
-                            </div>
-                            <div class="text-center">
-                                <%= link_to 'Book Now', "/booking?packege=bagger_caddie", class: "btn btn-dark-blue plan-btn" %>
-                            </div>
+                        <% @packages.each do |package| %>
+    <div class="plan-card">
+        <div>
+            <h3 class="plan-title text-center"><%= package.title %></h3>
+            <h4 class="plan-price text-center">$<%= package.price %></h4>
+        </div>
+        <div>
+            <ul class="plan-benefits">
+                <% package.details.split("\n").each do |detail| %>
+                    <li><%= detail %></li>
+                <% end %>
+            </ul>
+        </div>
+        <div class="text-center">
+           <%= link_to 'Book Now', "/booking?packege=#{package.title.parameterize}", class: "btn btn-dark-blue plan-btn" %>
+        </div>
+    </div>
+<% end %>
+                           
                         </div>
                     </div>
                 </div>

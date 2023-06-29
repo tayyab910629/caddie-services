@@ -1,4 +1,5 @@
 class PricingController < ApplicationController
     def pricing
-    end
+        @packages= Package.all
+     end
 end
