@@ -54,9 +54,10 @@ class BookingController < ApplicationController
         hash = eval(params[:order_params])
         @order = Golfer.new(hash.merge(order_number: @order_number, stripe_session_id: params[:session_id]  ) )
         
-        
-    
         @order.save
+
+        
+
 
         
       else
@@ -79,13 +80,7 @@ class BookingController < ApplicationController
       end
 
      
-    
-def check_for_values
-    unless session[:some_value].present?
-      flash[:alert] = 'Please provide necessary details first.'
-      redirect_to index_path
-    end
-  end
+
 
 
 
