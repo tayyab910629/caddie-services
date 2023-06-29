@@ -1,35 +1,17 @@
 class BookingController < ApplicationController
+
+
+
     def index
       @order_details=Package.find_by_id params[:packege]
-
-
-
       
-        # @test=params[:packege]
-        # if params[:packege] == "traditional-caddie"
-        #     @selcted_packege="You Selected Traditional Caddie"
-        #     @price=210
-        # elsif params[:packege] == "fore_caddie"
-        #     @selcted_packege="You Selected Fore Caddie"
-        #     @price=225
-        # elsif params[:packege] == "bagger_caddie"
-        #     @selcted_packege="You Selected Bagger Caddie"
-        #     @price=325
-
-        # else
-        #     redirect_to "/pricing/"
-        #   end
-       
+    if @order_details.blank?
+      redirect_to pricing_path and return
+    end
     end
 
     def purchase
-      # @order_number = Time.now.to_i.to_s
-      # @order = Golfer.new(golfer_params.merge(order_number: @order_number))
-      # session[:order_number] = @order.order_number
-    
-      # if @order.save
-      
-        @session = Stripe::Checkout::Session.create(
+     @session = Stripe::Checkout::Session.create(
           payment_method_types: ['card'],
           line_items: [{
             price_data: {
@@ -47,24 +29,20 @@ class BookingController < ApplicationController
           cancel_url: "#{root_url}booking?package=#{params[:Packege_Selected]}",
         )
     
-        # @order.update(stripe_session_id: @session.id)
-        # @order.save
+       
 
         VerifactionStripe.create(session_id: @session.id)
 
         redirect_to new_order_payment_path(@session.id)
 
-      # else
-      #   flash[:notice] = @order.errors.full_messages.to_sentence
-      #   redirect_to "/booking?package=#{params[:Packege_Selected]}"
-      # end
     end
     
     def payment
-      # @order = Golfer.find(params[:id])
+      
       @session_id = params[:id]
 
     end
+
 
     def thankyou1
 
@@ -88,6 +66,7 @@ class BookingController < ApplicationController
 
     end
 
+   
     
     private
 
@@ -101,7 +80,12 @@ class BookingController < ApplicationController
 
      
     
-
+def check_for_values
+    unless session[:some_value].present?
+      flash[:alert] = 'Please provide necessary details first.'
+      redirect_to index_path
+    end
+  end
 
 
 
