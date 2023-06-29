@@ -56,6 +56,13 @@ class BookingController < ApplicationController
         
         @order.save
 
+        @message = Golfer.find_by(stripe_session_id: params[:session_id])
+        if @message.present?
+          @order_number = @message.order_number
+        else
+          # Handle case where Golfer is not found
+        end
+
         
 
 
