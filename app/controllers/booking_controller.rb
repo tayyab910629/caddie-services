@@ -1,20 +1,24 @@
 class BookingController < ApplicationController
     def index
-      
-        @test=params[:packege]
-        if params[:packege] == "traditional-caddie"
-            @selcted_packege="You Selected Traditional Caddie"
-            @price=210
-        elsif params[:packege] == "fore_caddie"
-            @selcted_packege="You Selected Fore Caddie"
-            @price=225
-        elsif params[:packege] == "bagger_caddie"
-            @selcted_packege="You Selected Bagger Caddie"
-            @price=325
+      @order_details=Package.find_by_id params[:packege]
 
-        else
-            redirect_to "/pricing/"
-          end
+
+
+      
+        # @test=params[:packege]
+        # if params[:packege] == "traditional-caddie"
+        #     @selcted_packege="You Selected Traditional Caddie"
+        #     @price=210
+        # elsif params[:packege] == "fore_caddie"
+        #     @selcted_packege="You Selected Fore Caddie"
+        #     @price=225
+        # elsif params[:packege] == "bagger_caddie"
+        #     @selcted_packege="You Selected Bagger Caddie"
+        #     @price=325
+
+        # else
+        #     redirect_to "/pricing/"
+        #   end
        
     end
 
@@ -71,8 +75,12 @@ class BookingController < ApplicationController
         @order_number = Time.now.to_i.to_s
         hash = eval(params[:order_params])
         @order = Golfer.new(hash.merge(order_number: @order_number, stripe_session_id: params[:session_id]  ) )
+        
+        
     
         @order.save
+
+        
       else
           redirect_to '/pricing'
       end

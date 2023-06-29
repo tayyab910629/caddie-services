@@ -5,13 +5,19 @@ class Golfer < ApplicationRecord
 #    validates :email_address, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :stripe_session_id, uniqueness: true
 
-    # t.string :full_name
-    # t.string :email_address
-    # t.date :play_date
-    # t.string :play_time
-    # t.integer :selected_golf
-    # t.string :selected_packege
-    # t.string :selected_payment
+    after_save :When_job_done_custom_function
+    after_update :When_job_done_custom_function
+    after_create :When_job_done_custom_function
+
+
+
+def When_job_done_custom_function
+    #Call back working with .create, .update , .save whenever we work in controller
+    #Call back wont with with Update Columns, 
+ 
+end
+
+   
 
     
 end

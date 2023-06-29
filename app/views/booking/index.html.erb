@@ -15,7 +15,7 @@
               <div class="mb-40px">
                   <div class="section-head-inline">
                       <div class="section-title-sm text-green">
-                         <%=@selcted_packege%>
+                         <%=@order_details.title%>
                       </div>
                       <%= link_to 'Change', "/pricing", class: "change-btn" %>
                   </div>
@@ -47,8 +47,8 @@
     </div>
  
  <div class="section-title-sm text-green">
-<label>Total Amount: $<%= @price %></label>
-  <%= form.hidden_field :total_amount, value: @price %>
+<label>Total Amount: $<%= @order_details.price %></label>
+  <%= form.hidden_field :total_amount, value: @order_details.price %>
 </div>
 
 
