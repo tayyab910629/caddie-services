@@ -1,0 +1,70 @@
+<main>
+  <section class="section-pt section-pb bg-dark-blue">
+      <div class="container">
+          <div class="booking-wrapper">
+
+              <div class="mb-40px">
+                  <div class="section-head-inline">
+                      <div class="section-title-sm text-green">
+                         <%=@selcted_packege%>
+                      </div>
+                      <%= link_to 'Change', "/pricing", class: "change-btn" %>
+                  </div>
+
+                  <%= form_with url: purchase_path(@test) method: :post, class: "from-grid-col-2" do %>
+                      <div class="form-icon-wrapper">
+                          <%= image_tag("user-gray.png", alt: "user icon", class: "form-icon") %>
+
+                          <input class="input-default" type="text" placeholder="Enter your full name">
+                      </div>
+                      <div class="form-icon-wrapper">
+                          <%= image_tag("mail-gray.png", alt: "mail icon", class: "form-icon") %>
+
+                          <input class="input-default" type="email" placeholder="Email Address">
+                      </div>
+                      <div class="form-icon-wrapper">
+                          <%= image_tag("calendar-gray.png", alt: "", class: "form-icon") %>
+
+                          <input class="input-default" type="text" onfocus="(this.type='date')" placeholder="Select Date">
+                      </div>
+                      <div class="form-icon-wrapper">
+                          <%= image_tag("coffee-break.png", class: "form-icon") %>
+
+                          <input class="input-default" type="text" onfocus="(this.type='time')" placeholder="What is your Tee Time?">
+                      </div>
+                      <div class="form-icon-wrapper">
+                          <%= image_tag("golf-gray.png", class: "form-icon") %>
+                          <select name="" id="">
+                              <option value="1">Which Golf course you will be playing at?</option>
+                              <option value="2">option 2</option>
+                              <option value="3">option 3</option>
+                          </select>
+                      </div>
+
+                      <div class="section-head-inline">
+                          <div class="section-title-sm text-green">
+                              Select Payment Method
+                          </div>
+                      </div>
+
+                      <div class="payment-wrapper">
+                          <div class="payment-option">
+                              <input type="radio" id="card" name="card-payment" value="">
+                             <%= image_tag("credit-card-icons.png") %>
+                          </div>
+                          <div class="payment-option">
+                              <input type="radio" id="paypal" name="paypal-payment" value="">
+                              <%= image_tag("Paypal-white.png") %>
+                          </div>
+                      </div>
+
+                      <div class="paynow-btn-wrapper">
+                          <button class="btn btn-green">Pay Now</button>
+        
+                      </div>
+                  <% end %>
+              </div>
+          </div>
+      </section>
+  </div>
+</main>

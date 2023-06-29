@@ -1,0 +1,29 @@
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @show.name %></td>
+      <td><%= @show.age %></td>
+      <td><%= @show.gender %></td>
+      
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  var stripe = Stripe('pk_test_51LupHoBDqdN1B7igUaX9wzOrXnyMeU4u0xjLA45opuv6vnBbhMtROli3ga5DJl6D9GCAQVB4NeM0oiALaKqIW83a006DTyJY9p'); // replace with your public key
+
+  document.addEventListener('DOMContentLoaded', function () {
+    stripe.redirectToCheckout({
+      sessionId: '<%= @session_id %>'
+    }).then(function (result) {
+      if (result.error) {
+        alert(result.error.message);
+      }
+    });
+  });
+</script>

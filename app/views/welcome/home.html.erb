@@ -1,0 +1,206 @@
+ <main>
+        <!-- Hero section -->
+        <%=@message_home%>
+
+
+        
+        <section class="home-hero" style="background-image: url(<%= asset_path 'home-hero-banner.png' %>);">
+            <div class="p-relative h-full">
+                <div class="container">
+                    <div class="hero-content-wraper">
+                        <h1 class="hero-title">
+                            Welcome To Caddie Central
+                        </h1>
+                        <p class="hero-desc">
+                            Enhance your golf game with the help of a skilled caddie. Our caddies bring extensive
+                            knowledge
+                            of the course and provide valuable club recommendations, yardage advice, and course
+                            strategy.
+                            Choose to walk the course with a caddie and enjoy the full golfing experience.
+                        </p>
+                       
+                        <%= link_to welcome_home_path, class: 'btn btn-dark' do %>
+                       <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
+                       Book Your Caddie Now
+                      <% end %>
+                    </div>
+                </div>
+                
+                <%= image_tag('Wave.png', alt: 'Wave', class: 'hero-wave') %>
+
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section class="about-section section-pt section-pb">
+            <div class="container">
+                <div class="about-wrapper">
+                    <div class="about-left">
+                        <h3>ABOUT US</h3>
+                        <h4>
+                            Expert caddies for enhanced golf course assistance and enjoyment
+                        </h4>
+                        <a href="" class="about-read-more">READ MORE</a>
+                    </div>
+                    <div class="about-right">
+                        <p class="about-content">Looking to elevate your golf game? Our professional caddie service is
+                            here to help. Our
+                            expert caddies provide exceptional assistance on the course, offering guidance and support
+                            to enhance your enjoyment and performance. Whether you're a seasoned pro or a beginner, our
+                            caddies are ready to help you make the most of your time on the green. So why wait? Book a
+                            caddie and start playing your best golf today.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Our services -->
+        <section class="p-relative section-pt section-pb">
+            
+            <%= image_tag('dots-pattern.png', alt: 'dots-pattern.png', class: 'service-top-dots') %>
+            <div class="container">
+                <div class="section-title-md text-center text-dark-blue">
+                    Our Services
+                </div>
+                <div class="services-wrapper">
+                    <div class="service-card">
+                        <h3 class="service-title text-dark-blue">
+                            We Help Golfer Connect Directly with Caddie
+                        </h3>
+                        <p class="service-desc">
+                            Golf is hard enough.. we make the process of connecting you with an experienced caddie
+                            simply and easy
+                        </p>
+                        
+                        <%= image_tag('green-bottom-arrow.png', alt: 'green-bottom-arrow.png', class: 'service-bottom-arrow') %>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-title text-dark-blue">
+                            We give the caddie ability to easily connect with golfer so they can work when they desire
+                        </h3>
+                        <p class="service-desc">
+                            Golf is hard enough.. we make the process of connecting you with an experienced caddie
+                            simply and easy
+                        </p>
+                         <%= image_tag('green-bottom-arrow.png', alt: 'green-bottom-arrow.png', class: 'service-bottom-arrow') %>
+                    </div>
+                    <div class="service-card">
+                        <h3 class="service-title text-dark-blue">
+                            We take care of managing the caddie service, eliminating hassle for golf courses
+                        </h3>
+                        <p class="service-desc">
+                            Golf is hard enough.. we make the process of connecting you with an experienced caddie
+                            simply and easy
+                        </p>
+                         <%= image_tag('green-bottom-arrow.png', alt: 'green-bottom-arrow.png', class: 'service-bottom-arrow') %>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="http://" class="btn btn-dark">
+                        
+                        <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
+
+                        Book Your Caddie Now
+                    </a>
+                </div>
+            </div>
+            
+            <%= image_tag('dots-pattern.png', alt: 'dots-pattern.png', class: 'service-bottom-dots') %>
+        </section>
+
+        <section class="golf-club-section section-pt section-pb">
+            <div class="container">
+                <div class="golf-club-wrapper">
+                    <div class="club-card">
+                        <%= image_tag 'golf-club-1.png', alt: 'golf-club-1.png' %>
+                    </div>
+                    <div class="club-card">
+                       
+                        <%= image_tag 'golf-club-2.png', alt: 'golf-club-1.png' %>
+                    </div>
+                    <div class="club-card">
+                        <%= image_tag 'golf-club-3.png', alt: 'golf-club-1.png' %>
+                    </div>
+                    <div class="club-card">
+                        <%= image_tag 'golf-club-4.png', alt: 'golf-club-1.png' %>
+                    </div>
+                    <div class="club-card">
+                        <%= image_tag 'golf-club-5.png', alt: 'golf-club-1.png' %>
+                    </div>
+                    <div class="club-card">
+                        <%= image_tag 'golf-club-6.png', alt: 'golf-club-1.png' %>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works section -->
+        
+        <%= image_tag('Wave.png', alt: 'Wave', class: 'hiw-wave') %>
+        <section class="hiw-section section-pt section-pb">
+            <div class="container">
+                <div class="section-title-md text-center text-dark-blue">
+                    Get Started With Few Easy Steps
+                </div>
+                <h3 class="text-center hiw-sub-title">
+                    How it Works
+                </h3>
+
+                <div class="hiw-wrapper">
+                    <div class="hiw-card text-center">
+                        <div class="hiw-icon-wrapper">
+                            
+                            <%= image_tag 'select_window_icon.png', alt: 'select_window_icon' %>
+                        </div>
+                        <h4 class="hiw-title">Getting Started</h4>
+                        <p class="hiw-content">
+                            Click on the "Play with Caddie" button and follow the prompts to start the booking process
+                        </p>
+                    </div>
+                    <div class="hiw-card text-center">
+                        <div class="hiw-icon-wrapper">
+                            <%= image_tag 'calender.png', alt: 'calender.png' %>
+                        </div>
+                        <h4 class="hiw-title">Playing Golf</h4>
+                        <p class="hiw-content">
+                            Choose golf outing date and select desired tee time with caddie
+                        </p>
+                    </div>
+                    <div class="hiw-card text-center">
+                        <div class="hiw-icon-wrapper">
+                            
+                            <%= image_tag 'golf_hole_icon-white.png', alt: 'golf_hole_icon-white.png' %>
+                        </div>
+                        <h4 class="hiw-title">Golf Course</h4>
+                        <p class="hiw-content">
+                            Choose the golf course where you will be playing
+                        </p>
+                    </div>
+                    <div class="hiw-card text-center">
+                        <div class="hiw-icon-wrapper">
+                            
+                            <%= image_tag 'touchscreen.png', alt: 'touchscreen.png' %>
+                            
+                        </div>
+                        <h4 class="hiw-title">Select Caddie</h4>
+                        <p class="hiw-content">
+                            Select the caddie services that you are interested in
+                        </p>
+                    </div>
+                    <div class="hiw-card text-center">
+                        <div class="hiw-icon-wrapper">
+                            
+                            <%= image_tag 'thumb.png', alt: 'thumb' %>
+                        </div>
+                        <h4 class="hiw-title">All Done</h4>
+                        <p class="hiw-content">
+                            Your caddie will arrive at the golf course 10 minutes prior to your selected time
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>

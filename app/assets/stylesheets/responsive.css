@@ -1,0 +1,337 @@
+@media (max-width: 1024px) {
+    .btn {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    .app-logo img {
+        max-height: 80px;
+    }
+
+    .navbar {
+        display: none;
+        transform: translateX(-100%);
+        transition: 0.3s transform;
+    }
+
+    .nav-overlay.active {
+        display: block;
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        inset: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .navbar.active {
+        display: block;
+        position: fixed;
+        left: 0;
+        height: 100vh;
+        width: 280px;
+        bottom: 0;
+        background: #fff;
+        transform: translateX(0%);
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .nav-toggler {
+        height: 40px;
+        width: 40px;
+        border: 1px solid var(--mid-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 16px;
+        border-radius: 8px;
+    }
+
+    .nav-close {
+        margin-top: 20px;
+        margin-right: 12px;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+    }
+
+    .nav-close svg {
+        height: 28px;
+        width: 28px;
+        color: var(--mid-gray);
+    }
+
+    .nav-toggler svg {
+        height: 24px;
+        width: 24px;
+        color: var(--black);
+    }
+
+    .home-hero {
+        background-size: contain;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-desc {
+        font-size: 14px;
+    }
+
+    .about-left {
+        margin-right: 0;
+    }
+
+    .about-content {
+        font-size: 16px;
+    }
+
+    .hiw-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+
+    .cta-content {
+        font-size: 18px;
+    }
+
+    .footer-top-wrapper {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        width: 100%;
+        padding-right: 0;
+        flex-direction: column;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 50px auto;
+    }
+
+    .footer-content a {
+        margin-bottom: 20px;
+    }
+
+    .footer-links-wrapper {
+        width: 100%;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .services-wrapper {
+        max-width: 330px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .section-pt {
+        padding-top: 40px;
+    }
+
+    .section-pb {
+        padding-bottom: 40px;
+    }
+
+    .golf-club-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .section-title-md {
+        font-size: 24px;
+    }
+
+    .hiw-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .circle-shape {
+        height: 350px;
+        transform: scalex(1.5);
+    }
+
+    .testimonial-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 600px;
+    }
+
+    .caddie-hero-title {
+        font-size: 40px;
+    }
+
+    .caddie-hero-desc {
+        font-size: 14px;
+    }
+
+    .caddie-hero-wrapper {
+        padding: 0 1rem;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .about-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .about-left h3 {
+        font-size: 16px;
+    }
+
+    .about-left h4 {
+        font-size: 24px;
+    }
+
+    .our-caddies-wrapper {
+        max-width: 540px;
+    }
+
+    .footer-links-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 320px;
+        margin: auto;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-links-wrapper div:last-child {
+        grid-column: span 1;
+    }
+
+    .footer-bottom-wrapper {
+        flex-direction: column;
+    }
+
+    .footer-bottom-links {
+        margin-top: 12px;
+    }
+
+    .help-cta-wrapper {
+        flex-direction: column;
+    }
+
+    .help-cta-content {
+        margin-bottom: 40px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .help-cta-btn-wrapper {
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .btn {
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .app-logo .mobile-logo {
+        display: block;
+    }
+
+    .app-logo .desktop-logo {
+        display: none;
+    }
+
+    .home-hero {
+        background-image: url('../images/home-mob-banner.png');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: #fff;
+        height: 450px;
+        margin-top: 0;
+    }
+
+    .home-hero::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .hero-wave {
+        height: 50px;
+    }
+
+    .service-top-dots,
+    .service-bottom-dots {
+        display: none;
+    }
+
+    .hiw-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .our-caddies-wrapper {
+        max-width: 270px;
+    }
+
+    .golf-card-wrapper {
+        max-width: 350px;
+    }
+
+    .pricing-wrapper {
+        max-width: 350px;
+    }
+
+    .testi-image-wrapper img {
+        max-height: 80px;
+    }
+
+    .help-cta {
+        padding: 60px 0;
+    }
+
+    .help-cta-content h3 {
+        font-size: 22px;
+    }
+
+    .from-grid-col-2 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .section-title-sm {
+        font-size: 18px;
+    }
+
+    .text-area-col {
+        grid-column: span 1;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+
+    .contact-cta-wrapper {
+        max-width: 340px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3.5rem;
+    }
+}

@@ -1,0 +1,61 @@
+
+<main>
+    <section class="bg-dark-blue section-pt section-pb">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title-md text-center text-white mb-10px">
+            Our Caddies
+          </div>
+          <p class="text-center text-white fw-500">Our all Caddies are experienced and have gone through a vetting
+            process to ensure that they are knowledge and reliable</p>
+        </div>
+
+        <div class="our-caddies-wrapper">
+          <% Caddie.where(_approved: 'yes').each do |caddie| %>
+            <div class="caddies-card">
+              <div class="caddie-image">
+                <%= image_tag url_for(caddie.image), alt: caddie.full_name if caddie.image.attached? %>
+              </div>
+              <div class="caddie-review-wrapper">
+                <div class="caddie-review">
+                  <div class="caddie-name"><%= caddie.full_name %></div>
+                  <div class="caddie-star-rating">
+                    <img src="images/rating-star.png" alt="" />
+                    <%= image_tag "rating-star.png" %>
+                    <%= image_tag "rating-star.png" %>
+                    <%= image_tag "rating-star.png" %>
+                    <%= image_tag "rating-star.png" %>
+                    <%= image_tag "rating-star.png" %>
+                    
+                  </div>
+                </div>
+                <div class="caddie-rating-caddie-review-wrapper">
+                  <p class="rating">4.2</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section class="green-cta">
+      <div class="container">
+        <div class="caddies-cta">
+          <p class="cta-content">
+            If you believe that you possess the skills and qualities necessary
+            to be a successful caddie, we encourage you to join our team and
+            become a part of our team
+          </p>
+          <div class="cta-btn-wrapper">
+            <%= link_to 'Join Now', '#', class: 'btn btn-blue' %>
+           
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+
+
+
+ 

@@ -1,0 +1,69 @@
+<main>
+
+<% if flash[:notice].present? %>
+<div class="custom-alert custom-alert-danger" role="alert">
+  <%= flash[:notice] %>
+</div>
+<% end %>
+
+
+
+  <section class="section-pt section-pb bg-dark-blue">
+      <div class="container">
+          <div class="booking-wrapper">
+
+              <div class="mb-40px">
+                  <div class="section-head-inline">
+                      <div class="section-title-sm text-green">
+                         <%=@selcted_packege%>
+                      </div>
+                      <%= link_to 'Change', "/pricing", class: "change-btn" %>
+                  </div>
+ <%= form_with url: purchase_path(Packege_Selected: @test), local: true, method: :post, class: "from-grid-col-2" do |form| %>
+    <div class="form-icon-wrapper">
+        <%= image_tag("user-gray.png", alt: "user icon", class: "form-icon") %>
+
+        <%= form.text_field :full_name, class: "input-default", placeholder: "Enter your full name" %>
+    </div>
+    <div class="form-icon-wrapper">
+        <%= image_tag("mail-gray.png", alt: "mail icon", class: "form-icon") %>
+
+        <%= form.email_field :email, class: "input-default", placeholder: "Email Address" %>
+    </div>
+    <div class="form-icon-wrapper">
+        <%= image_tag("calendar-gray.png", alt: "", class: "form-icon") %>
+
+        <%= form.date_field :selected_date, class: "input-default", placeholder: "Select Date" %>
+    </div>
+    <div class="form-icon-wrapper">
+        <%= image_tag("coffee-break.png", class: "form-icon") %>
+
+        <%= form.time_field :tee_time, class: "input-default", placeholder: "What is your Tee Time?" %>
+    </div>
+    <div class="form-icon-wrapper">
+        <%= image_tag("golf-gray.png", class: "form-icon") %>
+        
+        <%= form.select :golf_course, options_for_select([["Which Golf course you will be playing at?", "1"], ["Option 2", "2"], ["Option 3", "3"]]) %>
+    </div>
+ 
+ <div class="section-title-sm text-green">
+<label>Total Amount: $<%= @price %></label>
+  <%= form.hidden_field :total_amount, value: @price %>
+</div>
+
+
+
+   
+
+    
+
+    <div class="paynow-btn-wrapper">
+        <%= form.submit "Pay Now", class: "btn btn-green" %>
+    </div>
+<% end %>
+
+              </div>
+          </div>
+      </section>
+  </div>
+</main>

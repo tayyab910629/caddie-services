@@ -1,0 +1,48 @@
+<%= @test %>
+
+<% if flash[:notice] %>
+  <div class="alert alert-danger">
+    <%= flash[:notice] %>
+  </div>
+  <%end%>
+
+<style>
+  table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  
+  .button-cell {
+    text-align: center;
+  }
+</style>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user_all.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.id %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add New Record', users_path, remote: true, class: 'button' %>
