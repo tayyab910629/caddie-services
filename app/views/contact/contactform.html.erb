@@ -1,0 +1,88 @@
+<main>
+
+        <div class="overflow-hidden">
+            <section class="p-relative section-pt section-pb">
+                <div class="circle-shape bg-green"></div>
+                <div class="container">
+                    <div class="section-head">
+                        <div class="section-title-md text-center text-dark-blue mb-10px">
+                            Contact US
+                        </div>
+                        <p class="text-center text-dark-blue fw-500">
+                            If you need our help, have questions about how to use the platform or are experiencing
+                            technical difficulties, please do not hesitate to contact us.
+                        </p>
+                    </div>
+
+                    <div class="contact-wrapper">
+                        <div class="contact-card">
+                           
+                            <%= form_with url: submit_form_path, local: true, html: { class: "from-grid-col-2" } do |f| %>
+  <div>
+    <%= f.label :name, 'Your name*' %>
+    <%= f.text_field :name, placeholder: 'Enter your full name', value: 'tayyab', class: 'input-default' %>
+  </div>
+  <div>
+    <%= f.label :email, 'Contact email *' %>
+    <%= f.email_field :email, placeholder: 'you@example.com', value: 'tayyab910629@gmail.com', class: 'input-default' %>
+  </div>
+  <div>
+    <%= f.label :company, 'Company name*' %>
+    <%= f.text_field :company, placeholder: 'Company name', value:'9xtech', class: 'input-default' %>
+  </div>
+  <div>
+    <%= f.label :subject, 'Subject' %>
+    <%= f.select :subject, [['Golfing', 1], ['Option 2', 2], ['Option 3', 3]], selected: 1 %>
+  </div>
+  <div class="text-area-col">
+    <%= f.label :content, 'Your message*' %>
+    <%= f.text_area :content, placeholder: 'Type your message….', value: "sdfgsdfgdsf" , cols: 30, rows: 8 %>
+  </div>
+  <div class="form-terms-text">
+    <p>By submitting this form you agree to our terms and conditions and our Privacy Policy
+        which explains how we may collect, use and disclose your personal information
+        including to third parties.</p>
+  </div>
+
+  <div class="paynow-btn-wrapper text-center">
+    <%= f.submit "Submit", class: "btn btn-dark" %>
+  </div>
+<% end %>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-pt section-pb">
+                <div class="container">
+                    <div class="contact-cta-wrapper">
+                        <div class="text-center">
+                            
+
+                            <%=image_tag('email-Icon.png', alt: 'email-con', class: 'mb-20px')%>
+
+                            <h3 class="mb-20px">Email us</h3>
+                            <p class="mb-20px text-gray-900">Email us for general queries, including caddie or golfiing
+                                opportunities.</p>
+                            <a class="cotact-link" href="">info@caddiecentral.ca</a>
+                        </div>
+
+                        <div class="text-center">
+                            
+                           
+                             
+
+                              <%= image_tag('call-Icon.png', alt: 'callicon', class: 'mb-20px') %>
+
+                            <h3 class="mb-20px">Call us</h3>
+                            <p class="mb-20px text-gray-900">Call us to speak to a member of our team. We are always
+                                happy to help.</p>
+                            <a class="cotact-link" href="">+1 (123) 456-789</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+    </main>

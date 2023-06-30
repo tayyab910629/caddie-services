@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   get "/becomecaddie", to: "welcome#joincaddie"
   get "/ourcaddies", to: "ourcaddies#caddieslist"
   get "/pricing", to: "pricing#pricing"
+  get "/contact" , to: "contact#contactform"
+  post "/submit_form" , to: "contact#submitform"
   get '/welcome/home', to: 'welcome#home', as: 'welcome_home'
+
  
   post '/purchase' , to: "booking#purchase"
   get '/thank-you1', to: 'booking#thankyou1'

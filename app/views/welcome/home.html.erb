@@ -19,7 +19,7 @@
                             Choose to walk the course with a caddie and enjoy the full golfing experience.
                         </p>
                        
-                        <%= link_to welcome_home_path, class: 'btn btn-dark' do %>
+                        <%= link_to pricing_path, class: 'btn btn-dark' do %>
                        <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
                        Book Your Caddie Now
                       <% end %>
@@ -98,12 +98,10 @@
                 </div>
 
                 <div class="text-center">
-                    <a href="http://" class="btn btn-dark">
-                        
-                        <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
-
-                        Book Your Caddie Now
-                    </a>
+                    <%= link_to pricing_path, class: 'btn btn-dark' do %>
+                       <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
+                       Book Your Caddie Now
+                      <% end %>
                 </div>
             </div>
             

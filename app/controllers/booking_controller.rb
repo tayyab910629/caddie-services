@@ -55,6 +55,7 @@ class BookingController < ApplicationController
         @order = Golfer.new(hash.merge(order_number: @order_number, stripe_session_id: params[:session_id]  ) )
         
         @order.save
+        
 
         @message = Golfer.find_by(stripe_session_id: params[:session_id])
         if @message.present?
