@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   post '/caddieapplied' , to: "caddieapplication#applied"
 
   get 'order/:id/payment', to: 'booking#payment', as: 'new_order_payment'
-
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
 
 

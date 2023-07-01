@@ -1,7 +1,11 @@
 class WelcomeController < ApplicationController
     def home
-      
-      puts "Home action executed!"
+      if function()
+        puts "working"
+      else
+        puts "not working"
+      end      
+     
     end
 
     def joincaddie
@@ -15,6 +19,8 @@ class WelcomeController < ApplicationController
 
       end
       
-
+def function
+  return "i am a function"
+end
 
 end

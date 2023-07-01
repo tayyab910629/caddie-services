@@ -54,7 +54,14 @@ class BookingController < ApplicationController
         hash = eval(params[:order_params])
         @order = Golfer.new(hash.merge(order_number: @order_number, stripe_session_id: params[:session_id]  ) )
         
-        @order.save
+        if @order.save
+          Caddie.all.each do |caddy|
+            ContactMailer.caddies_email(caddy).deliver_later
+            puts "Email is triggered for #{caddy.email}"
+          end
+        end
+
+    
         
 
         @message = Golfer.find_by(stripe_session_id: params[:session_id])

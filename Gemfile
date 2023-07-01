@@ -70,6 +70,15 @@ gem 'puma', '~> 3.11'
 gem 'activeadmin'
 gem 'stripe'
 
+group :development do
+  gem 'letter_opener'
+end
+
+
+group :development do
+  gem 'letter_opener_web'
+end
+
 
 
 

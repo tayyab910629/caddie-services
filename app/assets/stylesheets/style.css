@@ -41,6 +41,21 @@ button {
     border-color: #ebccd1;
   }
   
+  .notice {
+    color: green;
+    background-color: lightgreen;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid green;
+  }
+  
+  .alert {
+    color: red;
+    background-color: pink;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+  }
 
 
 .btn {
