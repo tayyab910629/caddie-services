@@ -1,0 +1,67 @@
+ 
+ <main>
+
+    
+
+       <section class="bg-dark-blue section-pt section-pb">
+            <div class="container">
+
+             <%if @message=="Confirmed"%>
+            
+
+                <div class="thank-you-card">
+                    <div>
+                        <div class="thanks-title text-center mb-10px">THANK YOU !</div>
+                        <div class="text-center">
+                            
+                            <%=image_tag 'check-green-icon.png' , alt: 'check-green-icon'%>
+                        </div>
+
+                        <div class="thankyou-content">
+                            <p>Thank you for Accepting the Booking, See the details of the Golfer
+                            </p>
+                            
+                            <p>We will do our best to find a caddie who is available and able to accommodate your needs.
+                                We will contact you as soon as a caddie has accepted your request.</p>
+                            <p>In the meantime, if you have any questions or concerns, please don't hesitate to reach
+                                out. We look forward to helping you have a great day on the course.</p>
+                            <p>Thank you again for choosing Caddie Central :)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <%else%>
+
+<div class="thank-you-card">
+                    <div>
+                        <div class="thanks-title text-center mb-10px">Sorry</div>
+                        <div class="text-center">
+                            
+                            <%=image_tag 'check-red-icon.png' , alt: 'check-green-icon'%>
+                        </div>
+
+                        <div class="thankyou-content">
+                            <p>Someone Already Accepted The Booking
+                            </p>
+                            
+                            <p>Our System is first come first bases, we are sorry but we want to see you in a next game.</p>
+                            <p>In the meantime, if you have any questions or concerns, please don't hesitate to reach
+                                out. We look forward to helping you have a great day on the course.</p>
+                            <p>Thank you again for choosing Caddie Central :)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <%end%>
+
+                
+
+            
+
+
+            </div>
+        </section>
+
+        
+
+    </main>

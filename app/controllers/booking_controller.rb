@@ -57,12 +57,12 @@ class BookingController < ApplicationController
         
         if @order.save
           Caddie.all.each do |caddy|
-            ContactMailer.caddies_email(caddy).deliver_later
+            ContactMailer.caddies_email(caddy,@order_number).deliver_later
           end
           @golfer_email=Golfer.find_by(stripe_session_id: params[:session_id])
           if @golfer_email.present?
             @email=@golfer_email.email_address
-            ContactMailer.golfer_order(@email).deliver_now
+            ContactMailer.golfer_order(@email,@order_number).deliver_now
           end
           
         end
@@ -95,7 +95,7 @@ class BookingController < ApplicationController
     def golfer_params
      {
       full_name: params[:full_name],email_address: params[:email],play_date: params[:selected_date],play_time: params[:tee_time],
-      selected_golf: params[:golf_course],selected_packege: params[:Packege_Selected],selected_payment: params[:payment_method],
+      selected_golf: params[:golf_course],selected_packege: params[:Packege_Selected],
       order_number: params[:order_number],total_amount: params[:total_amount]
     }
       end

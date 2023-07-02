@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_30_184000) do
+ActiveRecord::Schema.define(version: 2023_07_02_203606) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -89,12 +89,13 @@ ActiveRecord::Schema.define(version: 2023_06_30_184000) do
     t.string "play_time"
     t.integer "selected_golf"
     t.string "selected_packege"
-    t.string "selected_payment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "order_number"
     t.decimal "total_amount"
     t.string "stripe_session_id"
+    t.string "caddie_name", default: "Not Assigned"
+    t.string "caddie_email", default: "Not Assigned"
   end
 
   create_table "packages", force: :cascade do |t|

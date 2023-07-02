@@ -1,4 +1,15 @@
-<h1>Hello, <%= @kuch_b.email %></h1>
+<h1>Hello, <%= @kuch_b.full_name %></h1>
+
 <p>
-  We received your message. We'll get back to you as soon as possible.
+  New Golfer Make a Booking, If you interested click yes to connect the Golfer.
 </p>
+
+
+
+<%= link_to "/claim?order=#{@order}&name=#{@kuch_b.full_name}&email=#{@kuch_b.email}", class: "btn btn-dark join-team-btn" do %>
+  <%= image_tag 'golf_hole_icon.png', alt: 'golf_hole_icon' %>
+  YES
+<% end %>
+
+
+
