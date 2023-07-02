@@ -16,6 +16,16 @@ class ContactMailer < ApplicationMailer
         mail(to: @kuch_b.email, subject: 'We Received Your Message')
       end
 
+      def golfer_order (data)
+        @data=data
+        mail(to:@data, subject: 'Golfer Email' )
+      end
+
+      # def test_email
+      #   mail(to: 'tayyab910629@gmail.com', Subject: "this is home")
+
+      # end
+
 
 
 

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
  
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "/welcome", to: "welcome#home"
   root 'welcome#home'
   get "/submitted", to: "welcome#submitted"
   get "/about", to: "welcome#about"
