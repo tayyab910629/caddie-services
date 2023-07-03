@@ -56,7 +56,7 @@ class BookingController < ApplicationController
        
         
         if @order.save
-          Caddie.all.each do |caddy|
+          Caddie.approvedcaddie.each do |caddy|
             ContactMailer.caddies_email(caddy,@order_number).deliver_later
           end
           @golfer_email=Golfer.find_by(stripe_session_id: params[:session_id])

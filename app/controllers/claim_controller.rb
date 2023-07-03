@@ -1,20 +1,18 @@
 class ClaimController < ApplicationController
 
     def claim
-      
-        
-        @invite=Golfer.find_by_order_number(params[:order])
-        
-        
+      @invite=Golfer.find_by_order_number(params[:order])
         if @invite.caddie_name=="Not Assigned"
             @invite.update(caddie_name: params[:name], caddie_email: params[:email])
-            
-        
-
             @message = "Confirmed"
     
             
+        elsif
+            @invite.caddie_email==params[:email]
+            @message = "Already Confirmed"
+
         else
+
             puts "already koi ly gya boss"
             
         end

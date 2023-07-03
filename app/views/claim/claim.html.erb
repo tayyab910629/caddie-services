@@ -20,6 +20,14 @@
                         <div class="thankyou-content">
                             <p>Thank you for Accepting the Booking, See the details of the Golfer
                             </p>
+                             <p>Golfer Details.</p>
+                            Name : <strong><%=@invite.full_name%> </strong> </br>
+                            Phone : <strong><%=@invite.email_address%> </strong></br>
+                            Playing Date : <strong><%=@invite.play_date%> </strong></br>
+                            Palying Time : <strong><%=@invite.play_time%> </strong></br>
+                            Selcted Golf : <strong><%=@invite.selected_golf%> </strong></br>
+                            Packege : <strong><%=@invite.selected_packege%> </strong></br>
+                            </br>
                             
                             <p>We will do our best to find a caddie who is available and able to accommodate your needs.
                                 We will contact you as soon as a caddie has accepted your request.</p>
@@ -30,8 +38,35 @@
                     </div>
                 </div>
 
-                <%else%>
+                <%elsif @message=="Already Confirmed"%>
 
+<div class="thank-you-card">
+                    <div>
+                        <div class="thanks-title text-center mb-10px">You Accepted Aleady</div>
+                        <div class="text-center">
+                            
+                            <%=image_tag 'check-green-icon.png' , alt: 'check-green-icon'%>
+                        </div>
+
+                        <div class="thankyou-content">
+                            <p>You Already Confirmed the Booking
+                            </p>
+                            
+                            <p>Golfer Details.</p>
+                            Name : <strong><%=@invite.full_name%> </strong> </br>
+                            Phone : <strong><%=@invite.email_address%> </strong></br>
+                            Playing Date : <strong><%=@invite.play_date%> </strong></br>
+                            Palying Time : <strong><%=@invite.play_time%> </strong></br>
+                            Selcted Golf : <strong><%=@invite.selected_golf%> </strong></br>
+                            Packege : <strong><%=@invite.selected_packege%> </strong></br>
+                            </br>
+                            <p>In the meantime, if you have any questions or concerns, please don't hesitate to reach
+                                out. We look forward to helping you have a great day on the course.</p>
+                            <p>Thank you again for choosing Caddie Central :)</p>
+                        </div>
+                    </div>
+                </div>
+                  <%else%>
 <div class="thank-you-card">
                     <div>
                         <div class="thanks-title text-center mb-10px">Sorry</div>
@@ -51,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <%end%>
 
                 
